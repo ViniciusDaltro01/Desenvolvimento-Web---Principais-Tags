@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>API de Clima - Vinicius Daltro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f0f0f0;
+      border-radius: 10px;
+      text-align: center;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 1rem;
+      margin: 10px 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      cursor: pointer;
+      background: #333;
+      color: white;
+      border: none;
+    }
+    .resultado {
+      margin-top: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>API de Clima</h1>
+
+  <input type="text" id="cidade" placeholder="Digite o nome da cidade" />
+  <button id="buscar">Buscar Clima</button>
+
+  <div class="resultado" id="resultado" style="display:none;"></div>
+
+  <script>
+    document.getElementById('buscar').addEventListener('click', () => {
+      const cidade = document.getElementById('cidade').value.trim();
+      if (!cidade) {
+        alert('Por favor, digite uma cidade.');
+        return;
+      }
+
+      const resultadoDiv = document.getElementById('resultado');
+      resultadoDiv.style.display = 'none';
+      resultadoDiv.textContent = 'Carregando...';
+
+      fetch(`http://localhost:3000/clima?cidade=${encodeURIComponent(cidade)}`)
+        .then(res => {
+          if (!res.ok) throw new Error('Cidade não encontrada');
+          return res.json();
+        })
+        .then(data => {
+          resultadoDiv.style.display = 'block';
+          resultadoDiv.innerHTML = `
+            <h2>Clima em ${data.cidade}</h2>
+            <p>Temperatura: ${data.temperatura}°C</p>
+            <p>Descrição: ${data.descricao}</p>
+            <p>Umidade: ${data.umidade}%</p>
+            <p>Velocidade do vento: ${data.vento} m/s</p>
+          `;
+        })
+        .catch(err => {
+          resultadoDiv.style.display = 'block';
+          resultadoDiv.textContent = err.message;
+        });
+    });
+  </script>
+
+</body>
+</html>

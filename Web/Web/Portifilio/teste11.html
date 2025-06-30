@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfólio de Vinicius Daltro - Desenvolvedor Web" />
+  <title>Vinicius Daltro</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    header,
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+      position: relative;
+    }
+    nav {
+      background: #555;
+      text-align: center;
+      padding: 10px;
+      transition: background 0.3s, color 0.3s;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      transition: background 0.3s, color 0.3s;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    #projetos > div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .projeto {
+      flex: 1 1 45%;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 10px;
+      background-color: #fff;
+      margin-bottom: 20px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .projeto img {
+      width: 100%;
+      max-width: 300px;
+      display: block;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      transition: background 0.3s, color 0.3s, border-color 0.3s;
+    }
+    form button {
+      padding: 10px 20px;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background: #444;
+    }
+    .social a {
+      display: inline-block;
+      margin: 5px 10px 0 0;
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .social a:hover {
+      text-decoration: underline;
+    }
+    .social i {
+      margin-right: 5px;
+    }
+    .voltar-topo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #333;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .voltar-topo:hover {
+      background: #444;
+    }
+
+    /* Botão tema escuro */
+    #btn-tema {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      font-size: 20px;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s, color 0.3s, border-color 0.3s;
+    }
+    #btn-tema:hover {
+      background: #fff;
+      color: #333;
+      border-color: #333;
+    }
+
+    /* Tema escuro automático pelo sistema */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #121212;
+        color: #eee;
+      }
+      header,
+      footer,
+      nav {
+        background: #222;
+        color: #eee;
+      }
+      nav a,
+      .social a,
+      form button {
+        color: #eee;
+      }
+      .projeto {
+        background-color: #1e1e1e;
+        border-color: #444;
+      }
+      form input,
+      form textarea {
+        background-color: #333;
+        color: #eee;
+        border: 1px solid #555;
+      }
+      form button:hover {
+        background: #555;
+      }
+      .voltar-topo {
+        background: #444;
+        color: #eee;
+      }
+      .voltar-topo:hover {
+        background: #666;
+      }
+      #btn-tema {
+        border-color: #eee;
+        color: #eee;
+      }
+      #btn-tema:hover {
+        background: #eee;
+        color: #222;
+        border-color: #222;
+      }
+    }
+
+    /* Tema escuro manual via classe */
+    .dark-mode {
+      background: #121212 !important;
+      color: #eee !important;
+    }
+    .dark-mode header,
+    .dark-mode footer,
+    .dark-mode nav {
+      background: #222 !important;
+      color: #eee !important;
+    }
+    .dark-mode nav a,
+    .dark-mode .social a,
+    .dark-mode form button {
+      color: #eee !important;
+    }
+    .dark-mode .projeto {
+      background-color: #1e1e1e !important;
+      border-color: #444 !important;
+    }
+    .dark-mode form input,
+    .dark-mode form textarea {
+      background-color: #333 !important;
+      color: #eee !important;
+      border: 1px solid #555 !important;
+    }
+    .dark-mode form button:hover {
+      background: #555 !important;
+    }
+    .dark-mode .voltar-topo {
+      background: #444 !important;
+      color: #eee !important;
+    }
+    .dark-mode .voltar-topo:hover {
+      background: #666 !important;
+    }
+    .dark-mode #btn-tema {
+      border-color: #eee !important;
+      color: #eee !important;
+    }
+    .dark-mode #btn-tema:hover {
+      background: #eee !important;
+      color: #222 !important;
+      border-color: #222 !important;
+    }
+  </style>
+</head>
+<body id="topo">
+  <header>
+    <h1>Vinicius Daltro - Desenvolvedor Web</h1>
+    <button id="btn-tema" aria-label="Alternar tema claro/escuro" title="Alternar tema">🌓</button>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <main>
+    <section id="sobre">
+      <h2>Sobre Mim</h2>
+      <p>
+        Sou um desenvolvedor web apaixonado por transformar ideias em soluções digitais criativas. Especializado em front-end, sempre em busca de novos desafios.
+      </p>
+    </section>
+
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <ul>
+        <li>HTML5, CSS3, JavaScript ES6+</li>
+        <li>React, Node.js, APIs REST</li>
+        <li>UI/UX Design, Figma</li>
+        <li>Git & GitHub, Deploy com Vercel</li>
+      </ul>
+    </section>
+
+    <section id="projetos">
+      <h2>Projetos</h2>
+      <div>
+        <div class="projeto">
+          <img src="portfolio_thumb.jpg" alt="Portfólio" />
+          <p><strong>Portfólio:</strong> Meu site pessoal com layout responsivo e dark mode.</p>
+          <a href="https://github.com/ViniciusDaltro01/portfolio" target="_blank" rel="noopener noreferrer">Ver Código</a>
+        </div>
+        <div class="projeto">
+          <img src="clima_thumb.jpg" alt="Clima" />
+          <p><strong>API de Clima:</strong> Aplicação com dados climáticos em tempo real.</p>
+          <a href="https://github.com/ViniciusDaltro01/weather-app" target="_blank" rel="noopener noreferrer">Ver Código</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <form action="https://formspree.io/f/mexample" method="POST">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div class="social">
+        <a href="https://linkedin.com/in/seuusuario" aria-label="LinkedIn"
+          ><i class="ri-linkedin-box-fill"></i>LinkedIn</a
+        >
+        <a href="https://github.com/ViniciusDaltro01" aria-label="GitHub"
+          ><i class="ri-github-fill"></i>GitHub</a
+        >
+        <a href="https://wa.me/55SEUNUMERO" aria-label="WhatsApp"
+          ><i class="ri-whatsapp-fill"></i>WhatsApp</a
+        >
+        <a href="https://twitter.com/seuusuario" aria-label="Twitter"
+          ><i class="ri-twitter-x-fill"></i>Twitter (X)</a
+        >
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>2025 - Vinicius Daltro</p>
+    <p>"Transforme seu código em arte e sua arte em impacto."</p>
+  </footer>
+
+  <a href="#topo" class="voltar-topo" aria-label="Voltar ao topo">↑</a>
+
+  <script>
+    const btnTema = document.getElementById('btn-tema');
+    const body = document.body;
+
+    btnTema.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>

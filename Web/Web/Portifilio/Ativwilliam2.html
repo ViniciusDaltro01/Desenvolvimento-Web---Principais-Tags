@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="portfólio, desenvolvedor, web, Vinicius Daltro, projetos, frontend">
+  <meta name="author" content="Vinicius Daltro">
+  <meta name="description" content="Portfólio moderno de Vinicius Daltro, desenvolvedor Web Front-End">
+  <title>Vinicius Daltro | Desenvolvedor Web</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background-color: #fff;
+      color: #333;
+    }
+    header {
+      background: url('header_vinicius_daltro.png') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      font-size: 3rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    nav {
+      background-color: #333;
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #FFD700;
+    }
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #111;
+      border-bottom: 2px solid #ccc;
+      display: inline-block;
+    }
+    ul {
+      list-style: none;
+    }
+    .projeto {
+      margin-bottom: 20px;
+    }
+    .projeto img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+    form input, form textarea, form button {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background-color: #555;
+    }
+    .social a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: #333;
+      font-size: 1.2rem;
+    }
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    
+  </header>
+  <nav>
+    <a href="#sobre">Sobre Mim</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <main>
+    <section id="sobre">
+      <h2>Sobre Mim</h2>
+      <p>Sou um desenvolvedor web apaixonado por transformar ideias em soluções digitais criativas. Especializado em front-end, sempre em busca de novos desafios.</p>
+    </section>
+
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <ul>
+        <li>HTML5, CSS3, JavaScript ES6+</li>
+        <li>React, Node.js, APIs REST</li>
+        <li>UI/UX Design, Figma</li>
+        <li>Git & GitHub, Deploy com Vercel</li>
+      </ul>
+    </section>
+
+    <section id="projetos">
+      <h2>Projetos</h2>
+      <div class="projeto">
+        <img src="portfolio_thumb.jpg" alt="Thumb do portfólio">
+        <p><strong>Portfólio Responsivo:</strong> Meu site pessoal com layout responsivo e animações suaves.</p>
+        <a href="https://github.com/ViniciusDaltro01/portfolio" target="_blank">Ver Projeto</a>
+      </div>
+      <div class="projeto">
+        <img src="clima_thumb.jpg" alt="Thumb do app de clima">
+        <p><strong>API de Clima:</strong> App que consome uma API para previsão do tempo.</p>
+        <a href="https://github.com/ViniciusDaltro01/weather-app" target="_blank">Ver Projeto</a>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <form action="https://formspree.io/f/mexample" method="POST">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="mensagem" rows="4" placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div class="social">
+        <a href="https://linkedin.com/in/seuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/ViniciusDaltro01" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/55SEUNUMERO" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>2025 - Vinicius Daltro</p>
+    <p>"Transforme seu código em arte e sua arte em impacto."</p>
+  </footer>
+  <script>
+    console.log("👋 Olá desenvolvedor curioso! Veja meu GitHub: github.com/ViniciusDaltro01");
+  </script>
+</body>
+</html>
